@@ -22,32 +22,44 @@
       }
     </style>
   </head>
-<body>
-  <div class="container">
-  <h1>Shopping List Check Off</h1>
+  <body data-ng-app="ShoppingListCheckOff">
+    <div class="container">
+      <h1 class="jumbotron">Shopping List Check Off</h1>
 
-  <div class="row">
+      <div class="row">
 
-    <!-- To Buy List -->
-    <div class="col-md-6">
-     <h2>To Buy:</h2>
-     <ul>
-       <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
-       <li>Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
-     </ul>
-     <div class="emptyMessage">Everything is bought!</div>
+        <!-- To Buy List -->
+        <div data-ng-controller="ToBuyController as ctrl" class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h2>To Buy:</h2>
+            </div>
+            <div class="panel-body">
+                <ul data-ng-repeat="i in ctrl.list" class="list-group">
+                  <li class="list-group-item">Buy {{i.quantity}} {{i.name}} <button data-ng-click="ctrl.BuyItem($index);" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
+                </ul>
+                <div data-ng-if="ctrl.list.length === 0" class="emptyMessage alert alert-success">Everything is bought!</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Already Bought List -->
+        <div data-ng-controller="AlreadyBoughtController as ctrl" class="col-md-6">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h2>Already Bought:</h2>
+            </div>
+            <div class="panel-body">
+              <ul data-ng-repeat="i in ctrl.list" class="list-group">
+                <li class="list-group-item">Bought {{i.quantity}} {{i.name}}</li>
+              </ul>
+              <div data-ng-if="ctrl.list.length === 0" class="emptyMessage alert alert-warning">Nothing bought yet.</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <!-- Already Bought List -->
-    <div class="col-md-6">
-     <h2>Already Bought:</h2>
-     <ul>
-       <li>Bought 10 cookies</li>
-     </ul>
-     <div class="emptyMessage">Nothing bought yet.</div>
-    </div>
-  </div>
-</div>
-
-</body>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
 </html>
