@@ -1,0 +1,11 @@
+<div class="loader"></div>
+<ol>
+  <li ng-repeat="item in ctrl.found">
+    <ul>
+      <li>Name: {{ item.name }}</li>
+      <li>Short name: {{ item.short_name }}</li>
+      <li>Description: {{ item.description }}</li>
+      <button ng-click="ctrl.removeItem($index);">Don't want this one!</button>
+    </ul>
+  </li>
+</ol>
