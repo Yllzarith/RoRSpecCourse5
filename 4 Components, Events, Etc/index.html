@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>SPAs with AngularJS - Assignment 4: Restaurant Menu App</title>
+  </head>
+  <body data-ng-app='MenuApp'>
+		<!-- Site navbar -->
+		<nav id="site-nav" class="navbar navbar-inverse navbar-static-top">
+			<div class="container-fluid">
+				<header class="navbar-header">
+					<div class="navbar-brand">
+						<a href="index.html">Home</a>
+					</div>
+
+					<!-- Collapsible menu button -->
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapsible" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</header>
+
+				<!-- Collapsible menu items -->
+				<div class="collapse navbar-collapse" id="navbar-collapsible">
+					<ul class="nav navbar-nav text-center">
+						<li><a href="" data-ui-sref="categories">Menu Categories</a></li>
+					</ul>
+				</div>
+				<!-- Collapsible menu ends -->
+			</div>
+		</nav>
+		<!-- Site navbar ends -->
+
+    <ui-view></ui-view>
+
+    <loading-spinner></loading-spinner>
+
+    <!-- Libraries -->
+    <script src="lib/angular.min.js"></script>
+    <script src="lib/angular-ui-router.min.js"></script>
+    <script src="lib/jquery-1.11.3.min.js"></script>
+    <script src="lib/bootstrap.min.js"></script>
+
+    <!-- Modules -->
+    <script src="src/menuapp/menuapp.module.js"></script>
+    <script src="src/menuapp/data.module.js"></script>
+    <script src="src/spinner/spinner.module.js"></script>
+
+    <!-- Routes -->
+    <script src="src/routes.js"></script>
+
+    <!-- MenuApp module artifacts -->
+    <script src="src/menuapp/categories.component.js"></script>
+    <script src="src/menuapp/categories.controller.js"></script>
+    <script src="src/menuapp/categoryitems.component.js"></script>
+    <script src="src/menuapp/categoryitems.controller.js"></script>
+
+    <!-- data module artifacts -->
+    <script src="src/menuapp/menudata.service.js"></script>
+
+    <!-- 'Spinner' module artifacts -->
+    <script src="src/spinner/loadingspinner.component.js"></script>
+  </body>
+</html>
