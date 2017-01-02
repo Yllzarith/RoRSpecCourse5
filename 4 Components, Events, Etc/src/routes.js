@@ -35,10 +35,12 @@
     .state('items', {
       url: '/items/{categoryShortName}',
       templateUrl: 'src/menuapp/templates/home.html',
-      controller: 'CategoryItemsController as itemList'
-      // Because I'm not resolving here the state change will be
-      // close to instantaneous, so my loading spinner doesn't work as
-      // implemented based on state change events.
+      controller: 'CategoryItemsController as itemList',
+      resolve: {
+        items: ['MenuDataService', '$stateParams', function(MenuDataService, $stateParams) {
+          return MenuDataService.getItemsForCategory($stateParams.categoryShortName);
+        }]
+      }
     })
 
     // // Premade list page

@@ -1,17 +1,6 @@
-body {
-  font-size: 1.2em;
-}
-
-.error {
-  color: red;
-  font-weight: bold;
-  display: none;
-}
-
 .loading-icon {
-  /*position: absolute;
-  left: 50%;
-  top: 10px;*/
+  display: inline-block;
+  width: 24px;
 }
 
 li[data-ui-sref]:hover {
