@@ -8,6 +8,7 @@
   function RoutesConfig($stateProvider, $urlRouterProvider) {
 
     // Redirect to home page if no other URL matches
+    // Could use this to redirect to a 404/not found page, instead.
     $urlRouterProvider.otherwise('/');
 
     // *** Set up UI states ***
