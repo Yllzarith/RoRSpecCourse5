@@ -50,7 +50,7 @@ function routeConfig ($stateProvider) {
         // Inject extra style sheet using uiRouterStyles.  Kind of
         // silly to load a whole new library to selectively load a few
         // lines of css, but it was an excersize for directive-based DOM manip.
-        css: '../../css/validation.css'
+        css: 'css/validation.css'
       }
     })
     .state('public.myinfo', {
