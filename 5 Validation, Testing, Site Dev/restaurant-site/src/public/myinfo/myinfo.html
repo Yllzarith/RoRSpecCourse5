@@ -1,0 +1,19 @@
+<div class="container">
+  <div data-ng-if="myInfoCtrl.userInfo">
+    <dl>
+      <dt>Name:</dt>
+      <dd>{{myInfoCtrl.userInfo.first_name}}&nbsp;{{myInfoCtrl.userInfo.last_name}}</dd>
+      <dt>Email:</dt>
+      <dd>{{myInfoCtrl.userInfo.email}}</dd>
+      <dt>Phone:</dt>
+      <dd>{{myInfoCtrl.userInfo.phone_num}}</dd>
+    </dl>
+
+    <h3>Your saved favourite:</h3>
+    <menu-item menu-item="myInfoCtrl.userInfo.MenuItem">
+    </menu-item>
+  </div>
+    <div data-ng-if="!myInfoCtrl.userInfo">
+      <h3>Not Signed Up Yet. <a data-ui-sref="public.signup">Sign up Now!</a></h3>
+    </div>
+</div>

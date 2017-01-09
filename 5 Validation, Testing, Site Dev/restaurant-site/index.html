@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/restaurant.css">
     <link rel="stylesheet" href="css/common.css">
   </head>
-  <body ng-app="restaurant" ng-strict-di>
+  <body ng-app="restaurant" ng-strict-di ui-router-styles>
 
     <!-- Fixed position loading indicator -->
     <loading class="loading-indicator"></loading>
@@ -46,17 +46,17 @@
                 <a href="index.html">
                   <span class="glyphicon glyphicon-home"></span> Home</a>
               </li>
-              <li id="navMenuButton" ui-sref-active="active">
+              <li id="navMenuButton" data-ui-sref-active="active">
                 <a ui-sref="public.menu">
                   <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Menu</a>
               </li>
-              <li>
-                <a href="#">
-                  <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> About</a>
+              <li data-ui-sref-active="active">
+                <a id="navInfoButton" data-ui-sref="public.myinfo">
+                  <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> My Info</a>
               </li>
-              <li>
-                <a href="#">
-                  <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Awards</a>
+              <li data-ui-sref-active="active">
+                <a id="navSignUpButton" data-ui-sref="public.signup">
+                  <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Sign Up</a>
               </li>
               <li id="phone" class="hidden-xs">
                 <a href="tel:410-602-5008">
@@ -115,6 +115,8 @@
     <script src="lib/bootstrap.min.js"></script>
     <script src="lib/angular.min.js"></script>
     <script src="lib/angular-ui-router.min.js"></script>
+    <script src="lib/ui-router-styles.js"></script>
+    <script src="lib/angular-resource-min.js"></script>
 
     <!-- Main Restaurant Module -->
     <script src="src/restaurant.module.js"></script>
@@ -124,6 +126,7 @@
     <script src="src/common/loading/loading.component.js"></script>
     <script src="src/common/loading/loading.interceptor.js"></script>
     <script src="src/common/menu.service.js"></script>
+    <script src="src/common/userinfo.service.js"></script>
 
     <!-- Public Module -->
     <script src="src/public/public.module.js"></script>
@@ -132,6 +135,8 @@
     <script src="src/public/menu-category/menu-category.component.js"></script>
     <script src="src/public/menu-items/menu-items.controller.js"></script>
     <script src="src/public/menu-item/menu-item.component.js"></script>
+    <script src="src/public/sign-up/signup.controller.js"></script>
+    <script src="src/public/myinfo/myinfo.controller.js"></script>
 
     <!-- ADMIN SITE -->
 

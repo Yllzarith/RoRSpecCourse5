@@ -40,6 +40,29 @@ function routeConfig ($stateProvider) {
           return MenuService.getMenuItems($stateParams.category);
         }]
       }
+    })
+    .state('public.signup', {
+      url: '/signup',
+      templateUrl: 'src/public/sign-up/signup.html',
+      controller: 'SignupController',
+      controllerAs: 'signupCtrl',
+      data: {
+        // Inject extra style sheet using uiRouterStyles.  Kind of
+        // silly to load a whole new library to selectively load a few
+        // lines of css, but it was an excersize for directive-based DOM manip.
+        css: '/css/validation.css'
+      }
+    })
+    .state('public.myinfo', {
+      url: '/myinfo',
+      templateUrl: 'src/public/myinfo/myinfo.html',
+      controller: 'MyInfoController',
+      controllerAs: 'myInfoCtrl',
+      resolve: {
+        _userInfo: ['UserInfoService', function(UserInfoService) {
+          return UserInfoService.GetUser();
+        }]
+      }
     });
 }
 })();
