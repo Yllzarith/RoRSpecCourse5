@@ -18,10 +18,12 @@
       var rtrn = UserInfoService.AddUser(ctrl.user);
       rtrn.then(
         function (response) {
+          ctrl.invalidfav = false;
           ctrl.completed = true;
         },
         function (response) {
           ctrl.invalidfav = true;
+          ctrl.completed = false;
         }
       );
     }
